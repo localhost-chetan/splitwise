@@ -1,6 +1,7 @@
 import { ReactScan } from "@components/ReactScan";
 import "@/app/globals.css";
 import { type Metadata } from "next";
+import { Header } from "@shared/Header";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,10 +17,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={`en`}>
+    <html lang={`en`} className={`dark`}>
       <ReactScan />
 
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <Header />
+
+        <main className={`min-h-screen`}>{children}</main>
+      </body>
     </html>
   );
 }
