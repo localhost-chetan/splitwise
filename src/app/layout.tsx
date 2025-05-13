@@ -3,6 +3,7 @@ import "@/app/globals.css";
 import { type Metadata } from "next";
 import { Header } from "@shared/Header";
 import { Inter } from "next/font/google";
+import { ConvexClientProvider } from "@providers/ConvexClientProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +22,11 @@ export default function RootLayout({
       <ReactScan />
 
       <body className={`${inter.className} antialiased`}>
-        <Header />
+        <ConvexClientProvider>
+          <Header />
 
-        <main className={`min-h-screen`}>{children}</main>
+          <main className={`min-h-screen`}>{children}</main>
+        </ConvexClientProvider>
       </body>
     </html>
   );
