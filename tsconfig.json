@@ -21,6 +21,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@lib/*": ["./src/lib/*"],
+      "@convex/*": ["./convex/*"],
+      "@features/*": ["./src/features/*"],
       "@shadcn/*": ["./src/components/ui/*"],
       "@components/*": ["./src/components/*"],
       "@shared/*": ["./src/components/shared/*"],

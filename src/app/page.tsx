@@ -1,9 +1,3 @@
-import { Button } from "@shadcn/button";
-
-export default function Home() {
-  return (
-    <div>
-      <Button>Split</Button>
-    </div>
-  );
+export default function Page() {
+  return <div>Home Page</div>;
 }

@@ -1,3 +1,9 @@
+import { AuthStatus } from "@features/auth";
+
 export function Header() {
-  return <header>header</header>;
+  return (
+    <header>
+      <AuthStatus />
+    </header>
+  );
 }
