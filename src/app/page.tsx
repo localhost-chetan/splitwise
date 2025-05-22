@@ -1,8 +1,20 @@
+import Link from "next/link";
 import { LayoutWrapper } from "@common/LayoutWrapper";
 
 export default function Page() {
   return (
     <LayoutWrapper>
+      <div
+        className={`mb-10 flex flex-wrap content-center items-center gap-x-10`}
+      >
+        <Link href={`/contacts`}>Contacts</Link>
+        <Link href={`/dashboard`}>Dashboard</Link>
+        <Link href={`/expenses`}>Expenses</Link>
+        <Link href={`/groups`}>Groups</Link>
+        <Link href={`/persons`}>Persons</Link>
+        <Link href={`/settlements`}>Settlements</Link>
+      </div>
+
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
         aliquid, repellendus sunt sapiente enim dolores iusto a consequatur
