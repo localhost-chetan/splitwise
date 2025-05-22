@@ -10,5 +10,12 @@ export const SignIn = () => {
     await signIn(`github`);
   };
 
-  return <Button onClick={handleSignIn}>SignIn</Button>;
+  return (
+    <Button
+      onClick={handleSignIn}
+      className={`duration-300 ease-out hover:scale-105 hover:bg-green-400`}
+    >
+      Sign In
+    </Button>
+  );
 };

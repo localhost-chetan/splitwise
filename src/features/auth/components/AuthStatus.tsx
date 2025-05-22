@@ -1,14 +1,14 @@
 "use client";
 
-import { SignIn, SignOut } from "@features/auth";
+import { Loader } from "@features/auth/components/Loader";
+import { SignIn, UserDropdownButton } from "@features/auth";
 import { Authenticated, AuthLoading, Unauthenticated } from "convex/react";
-import { ButtonSkeleton } from "@features/auth/components/SkeletonLoaders";
 
 export const AuthStatus = () => {
   return (
     <>
       <AuthLoading>
-        <ButtonSkeleton />
+        <Loader />
       </AuthLoading>
 
       <Unauthenticated>
@@ -16,7 +16,7 @@ export const AuthStatus = () => {
       </Unauthenticated>
 
       <Authenticated>
-        <SignOut />
+        <UserDropdownButton />
       </Authenticated>
     </>
   );

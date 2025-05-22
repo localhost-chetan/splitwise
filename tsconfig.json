@@ -25,6 +25,7 @@
       "@features/*": ["./src/features/*"],
       "@shadcn/*": ["./src/components/ui/*"],
       "@components/*": ["./src/components/*"],
+      "@common/*": ["./src/components/common/*"],
       "@shared/*": ["./src/components/shared/*"],
       "@providers/*": ["./src/components/providers/*"]
     }

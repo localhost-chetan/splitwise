@@ -1,6 +1,6 @@
 import { Skeleton } from "@shadcn/skeleton";
 
-export const ButtonSkeleton = () => {
+export const Loader = () => {
   return (
     <Skeleton
       className={`bg-primary flex h-9 w-[8ch] items-center justify-center`}
