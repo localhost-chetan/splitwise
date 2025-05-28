@@ -9,7 +9,7 @@ export const Links = () => {
   if (pathname === `/`) {
     return (
       <div
-        className={`hidden items-center gap-x-4 text-sm transition-colors duration-500 ease-out *:hover:text-green-300 md:flex`}
+        className={`hidden items-center gap-x-10 text-sm transition-colors duration-500 ease-out *:hover:text-green-300 md:flex`}
       >
         <Link href={`#features`}>Features</Link>
         <Link href={`#how-it-works`}>How It Works</Link>

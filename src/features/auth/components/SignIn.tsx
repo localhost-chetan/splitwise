@@ -12,8 +12,9 @@ export const SignIn = () => {
 
   return (
     <Button
+      variant={`outline`}
       onClick={handleSignIn}
-      className={`duration-300 ease-out hover:scale-105 hover:bg-green-400`}
+      className={`duration-300 ease-out hover:scale-105`}
     >
       Sign In
     </Button>

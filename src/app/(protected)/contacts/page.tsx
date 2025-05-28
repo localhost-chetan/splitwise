@@ -1,4 +1,4 @@
-import { LayoutWrapper } from "@common/LayoutWrapper";
+import { LayoutWrapper } from "@components/layouts";
 import { UserGreeting } from "@components/UserGreeting";
 
 export default async function Page() {

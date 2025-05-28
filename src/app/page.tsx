@@ -1,44 +1,125 @@
-import Link from "next/link";
-import { LayoutWrapper } from "@common/LayoutWrapper";
+import Image from "next/image";
+import { Section } from "@components/layouts";
+import { FEATURES, STEPS, TESTIMONIALS } from "@constants/landing-page";
+import { CTAButton, FeatureCard, TestimonialCard } from "@components/blocks";
 
 export default function Page() {
   return (
-    <LayoutWrapper>
-      <div
-        className={`mb-10 flex flex-wrap content-center items-center gap-x-10`}
+    <>
+      {/* Hero Section */}
+      <Section
+        id={`hero`}
+        hasMainHeading
+        badgeText={`Split expenses. Simplify life.`}
+        title={`The smartest way to split expenses with friends.`}
+        description={`Track shared expenses, split bills effortlessly, and settle up quickly. Never worry about who owes who again.`}
       >
-        <Link href={`/contacts`}>Contacts</Link>
-        <Link href={`/dashboard`}>Dashboard</Link>
-        <Link href={`/expenses`}>Expenses</Link>
-        <Link href={`/groups`}>Groups</Link>
-        <Link href={`/persons`}>Persons</Link>
-        <Link href={`/settlements`}>Settlements</Link>
-      </div>
+        <div
+          className={`flex flex-col items-center justify-center gap-x-10 gap-y-6 sm:flex-row`}
+        >
+          <CTAButton isPrimary href={`/dashboard`} label={`Get Started`} />
+          <CTAButton href={`#how-it-works`} label={`How It Works`} />
+        </div>
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-        aliquid, repellendus sunt sapiente enim dolores iusto a consequatur
-        voluptas, optio eaque veritatis officiis illo quod animi neque accusamus
-        magni repudiandae nihil eum ex! Sint aspernatur rerum aperiam. Et,
-        labore soluta dolor, voluptates dignissimos nulla maxime alias assumenda
-        quam quod, sint deleniti porro. Accusamus fuga voluptatum, quos, nihil
-        possimus temporibus neque deleniti ipsa vel distinctio autem.
-        Consectetur distinctio in commodi cum provident similique reprehenderit
-        ratione sit sint, neque a quisquam? Sunt nobis mollitia quo error
-        dolorem maxime commodi beatae vel eos, nemo suscipit quos molestias
-        illum totam ipsum vero aperiam dolor sit exercitationem repellat
-        accusamus assumenda veniam est! Dolores ullam fuga impedit vel
-        perspiciatis! Consequuntur, cum voluptatem. Temporibus ea est non nobis
-        nam, alias odio velit quam eveniet in. Ut eos rerum perferendis nulla.
-        Dicta iure atque est quod, maxime iusto voluptatibus officiis molestiae
-        optio odit maiores deleniti asperiores! Eaque facere eos iure est
-        temporibus, deleniti fugiat fuga, repellendus quaerat quae, reiciendis
-        enim ullam consequatur quibusdam dolores ipsam officia explicabo.
-        Laudantium, inventore maiores, doloribus, veniam quod porro id iure
-        ipsum quasi impedit exercitationem dignissimos officia dolorem
-        accusamus. Ducimus necessitatibus, omnis illum alias facilis numquam
-        provident eos obcaecati eum, sit quod voluptatibus.
-      </p>
-    </LayoutWrapper>
+        <div className={`mx-[3vw] my-10 sm:mx-15 md:mx-25`}>
+          <Image
+            priority
+            width={1000}
+            height={720}
+            alt={`Hero Image`}
+            src={`/hero_image.png`}
+            sizes={`(max-width: 640px) 70vw, (max-width: 1024px) 70vw, 1000px`}
+            className={`border-primary/70 shadow-primary aspect-video overflow-hidden rounded-lg border-4`}
+          />
+        </div>
+      </Section>
+
+      {/* Features Section */}
+      <Section
+        id={`features`}
+        badgeText={`Features`}
+        title={`Everything you need to split expenses.`}
+        description={`Our plateform provides all the tools you need to handle shared expenses with ease.`}
+        className={`bg-gray-100 text-center dark:bg-gray-700/10`}
+      >
+        <div
+          className={`mx-5 mt-10 grid grid-cols-1 gap-8 sm:mx-8 sm:grid-cols-2 md:grid-cols-3 md:gap-x-5 lg:gap-x-10`}
+        >
+          {FEATURES.map((feature) => (
+            <FeatureCard key={feature.title} {...feature} />
+          ))}
+        </div>
+      </Section>
+
+      {/* How It Works Section */}
+      <Section
+        id={`how-it-works`}
+        badgeText={`How It Works`}
+        title={`Splitting expenses has never been easier.`}
+        description={`Follow these simple steps to start tracking and splitting expenses wihh friends.`}
+      >
+        <div
+          className={`mx-5 my-10 flex flex-wrap content-center items-center justify-center gap-10`}
+        >
+          {STEPS.map(({ label, title, description }) => (
+            <div
+              key={label}
+              className={`flex flex-col items-center justify-center gap-y-4 rounded-md px-3`}
+            >
+              <div
+                className={`text-primary flex size-12 items-center justify-center rounded-full bg-green-200 text-2xl font-semibold`}
+              >
+                {label}
+              </div>
+
+              <h3 className={`text-lg font-bold`}>{title}</h3>
+              <p className={`max-w-[30ch] text-pretty`}>{description}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Testimonial Section */}
+      <Section
+        id={`testimonials`}
+        badgeText={`Testimonials`}
+        title={`What our users are saying.`}
+        description={` Our plateform provides all the tools you need to handle shared expenses with ease.`}
+        className={`bg-gray-100 dark:bg-gray-700/10`}
+      >
+        <div
+          className={`sm mx-5 mt-20 flex flex-wrap content-center justify-center gap-y-5 sm:mx-8 sm:gap-10`}
+        >
+          {TESTIMONIALS.map((testimonial) => (
+            <TestimonialCard key={testimonial.name} {...testimonial} />
+          ))}
+        </div>
+      </Section>
+
+      {/* CTA Section */}
+      <section className={`gradient-effect py-20`}>
+        <div
+          className={`flex flex-col items-center justify-center text-center`}
+        >
+          <h2
+            className={`px-2 text-2xl font-semibold text-pretty text-white sm:text-3xl sm:font-extrabold`}
+          >
+            Ready to simpify expense sharing?
+          </h2>
+          <p
+            className={`mt-3 max-w-lg text-sm text-balance text-green-100 md:text-base/normal`}
+          >
+            Join thounsands of users who have made splitting expenses
+            stress-free.
+          </p>
+
+          <CTAButton
+            href={`/dashboard`}
+            label={`Get Started`}
+            className={`mt-4`}
+          />
+        </div>
+      </section>
+    </>
   );
 }

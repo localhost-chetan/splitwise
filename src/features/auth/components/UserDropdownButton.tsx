@@ -26,7 +26,7 @@ const UserButton = ({ className }: UserButtonProps) => {
     return (
       <Avatar className={cn(`size-10 cursor-pointer`, className)}>
         <AvatarImage src={user.image} alt={`${user.name} logo`} />
-        <AvatarFallback>{user.name}</AvatarFallback>
+        <AvatarFallback>{user.name?.at(0) || `U`}</AvatarFallback>
       </Avatar>
     );
   }

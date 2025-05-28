@@ -17,6 +17,7 @@ export const SignOut = ({ className }: SignOutProps) => {
 
   return (
     <Button
+      variant={`secondary`}
       onClick={handleSignOut}
       className={cn(
         `hover:bg-destructive duration-300 ease-out hover:scale-105`,

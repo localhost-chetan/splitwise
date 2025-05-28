@@ -1,8 +1,8 @@
 import "@/app/globals.css";
 import { type Metadata } from "next";
-import { Header } from "@shared/Header";
 import { Inter } from "next/font/google";
 import { APP_NAME } from "@lib/appConfigs";
+import { Header, Footer } from "@components/layouts";
 import { ConvexClientProvider } from "@providers/ConvexClientProvider";
 import { ConvexAuthNextjsServerProvider } from "@convex-dev/auth/nextjs/server";
 
@@ -29,6 +29,8 @@ export default function RootLayout({
             <Header />
 
             <main className={`min-h-screen`}>{children}</main>
+
+            <Footer />
           </ConvexClientProvider>
         </body>
       </html>
