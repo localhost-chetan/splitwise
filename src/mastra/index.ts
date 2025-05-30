@@ -1,3 +1,4 @@
+import { VercelDeployer } from '@mastra/deployer-vercel';
 
 import { Mastra } from '@mastra/core/mastra';
 import { PinoLogger } from '@mastra/loggers';
@@ -15,4 +16,9 @@ export const mastra = new Mastra({
     level: 'info',
   }),
 
+  deployer: new VercelDeployer({
+    projectName: `Splitwise`,
+    token: `prj_gWnaOM54Bv4LZuU0WGWVvYp7i4MS`,
+    teamSlug: `weather-agent`
+  })
 });
