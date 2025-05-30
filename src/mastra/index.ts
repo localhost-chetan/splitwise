@@ -18,7 +18,7 @@ export const mastra = new Mastra({
 
   deployer: new VercelDeployer({
     projectName: `Splitwise`,
-    token: `prj_gWnaOM54Bv4LZuU0WGWVvYp7i4MS`,
+    token: `qZPjPB3K254QWbBTHdYOnAc4`,
     teamSlug: `weather-agent`
   })
 });
